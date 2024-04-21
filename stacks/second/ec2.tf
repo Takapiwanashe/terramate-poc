@@ -128,35 +128,3 @@ resource "aws_route_table_association" "Nam-rta-public-subnet-02" {
   subnet_id      = aws_subnet.Nam-public-subnet-02.id
   route_table_id = aws_route_table.Nam-public-rt.id
 }
-
-
-# Analyze "test": sqp_d0a95bae684bc8c3a70d399a506ad74ba5a90e92
-
-# # must be unique in a given SonarQube instance
-# sonar.projectKey=test
-
-# # --- optional properties ---
-
-# defaults to project key
-#sonar.projectName=My project
-# defaults to 'not provided'
-#sonar.projectVersion=1.0
- 
-# Path is relative to the sonar-project.properties file. Defaults to .
-#sonar.sources=.
- 
-# Encoding of the source code. Default is default system encoding
-#sonar.sourceEncoding=UTF-8
-
-
-# YOUR_PROJECT_KEY=test
-# SONARQUBE_URL=http://localhost:9000
-# YOUR_REPO=/Users/taka/Repos/terraform-modules
-
-# docker run \
-#     --rm \
-#     -e SONAR_HOST_URL="http://${SONARQUBE_URL}" \
-#     -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=${YOUR_PROJECT_KEY}" \
-#     -e SONAR_TOKEN="qp_d0a95bae684bc8c3a70d399a506ad74ba5a90e92" \
-#     -v "${YOUR_REPO}:/usr/src" \
-#     sonarsource/sonar-scanner-cli
